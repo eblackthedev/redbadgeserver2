@@ -23,10 +23,10 @@ router.post("/create", async (req, res) => {
   }
 });
 
-router.put("/update/:plantId", validateJWT, async (req, res) => {
+router.put("/update/:id", validateJWT, async (req, res) => {
   const userId = req.user.id;
-  const plantId = req.params.plantId;
-  const { plantType, plantName } = req.body;
+  const plantId = req.params.id;
+  const { plantType, plantName } = req.body.plant;
   const query = {
     where: {
       id: plantId,
